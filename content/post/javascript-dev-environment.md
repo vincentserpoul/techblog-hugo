@@ -22,5 +22,5 @@ install sublimetext3 and these plugins
     install jscs-formatter
     install Sublime-Linter-Contrib-eslint
     install React ES6 snippets
-    install sublimeLinter-jscs
+    install JSCS-Formatter
     
