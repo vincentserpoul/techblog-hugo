@@ -19,7 +19,6 @@ npm install -g jscs eslint eslint-plugin-react webpack webpack-dev-server serve
 
 install sublimetext3 and these plugins
     install babel
-    install jscs-formatter
     install Sublime-Linter-Contrib-eslint
     install React ES6 snippets
     install JSCS-Formatter
