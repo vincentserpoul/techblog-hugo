@@ -25,3 +25,5 @@ install go/tools
     go get -u golang.org/x/tools/cmd/godoc
 
 install gometalinter (https://github.com/alecthomas/gometalinter)
+install interfacer (https://github.com/mvdan/interfacer/)
+install gosimple (https://github.com/dominikh/go-simple)
