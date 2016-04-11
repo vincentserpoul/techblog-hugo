@@ -21,7 +21,7 @@ https://docs.npmjs.com/getting-started/installing-node
 
 # Install nodejs essential packages
 
-npm install -g eslint webpack webpack-dev-server babel-eslint serve 
+npm install -g eslint jshint webpack webpack-dev-server babel-eslint serve 
 
 # Install sublime-text essential plugins
 
