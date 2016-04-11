@@ -1,5 +1,5 @@
 +++
-date = "2016-02-09T14:48:27+08:00"
+date = "2016-02-20T20:48:27+08:00"
 title = "golang dev environment setup"
 description = "go tooling"
 tags = [ "golang", "sublimetext", "tools", "environment", "development", "setup" ]

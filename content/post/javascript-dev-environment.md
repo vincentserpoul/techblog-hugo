@@ -1,5 +1,5 @@
 +++
-date = "2016-02-15T20:48:27+08:00"
+date = "2016-03-10T20:48:27+08:00"
 title = "javascript dev environment setup"
 description = "javascript tooling"
 tags = [ "javascript", "sublimetext", "tools", "environment", "development", "setup" ]

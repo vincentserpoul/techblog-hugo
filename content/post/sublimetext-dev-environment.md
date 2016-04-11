@@ -1,6 +1,6 @@
 
 +++
-date = "2016-01-15T20:48:27+08:00"
+date = "2016-02-10T20:48:27+08:00"
 title = "Sublime text setup with essential tools"
 description = "sublime text setup with essential tools"
 tags = [ "sublimetext", "tools", "environment", "development", "setup" ]
