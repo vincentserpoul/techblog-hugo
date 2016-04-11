@@ -5,7 +5,6 @@ description = "javascript tooling"
 tags = [ "javascript", "sublimetext", "tools", "environment", "development", "setup" ]
 topics = [ "javascript", "development" ]
 slug = "javascript-dev-env-setup"
-
 +++
 
 # Javascript environment
