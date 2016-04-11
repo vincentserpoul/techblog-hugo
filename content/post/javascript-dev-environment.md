@@ -30,4 +30,43 @@ With the help of the package manager, in sublime-text, install the following pac
 # Make sure your linter is working
 
 In sublime text, open the console (view > show console) and check if there is any error message.
-    
+
+Alright, let's check if everything is fine. Let's create a test project in a new folder.
+
+Add a .eslintrc file, with this content: 
+
+```
+{
+  "extends": "airbnb",
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "quotes": [2, "single"],
+    "strict": [2, "never"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "no-console": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}
+```
+
+then create a simple test.js with this content:
+
+```
+echo "test"
+```
+
+You should see the linter complaining, telling you something is wrong and you need to correct your javascript (check the lower grey line of sublime for the comment).
+
+If you don't see anything, check the console again.
