@@ -1,4 +1,3 @@
-
 +++
 date = "2016-02-10T20:48:27+08:00"
 title = "Sublime text setup with essential tools"

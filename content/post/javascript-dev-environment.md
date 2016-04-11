@@ -21,7 +21,7 @@ https://docs.npmjs.com/getting-started/installing-node
 
 # Install nodejs essential packages
 
-npm install -g eslint eslint-plugin-react webpack webpack-dev-server serve 
+npm install -g eslint webpack webpack-dev-server babel-eslint serve 
 
 # Install sublime-text essential plugins
 
@@ -49,15 +49,8 @@ Add a .eslintrc file, with this content:
   "parser": "babel-eslint",
   "rules": {
     "quotes": [2, "single"],
-    "strict": [2, "never"],
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2,
-    "no-console": 0
-  },
-  "plugins": [
-    "react"
-  ]
+    "strict": [2, "never"]
+  }
 }
 ```
 
@@ -70,3 +63,5 @@ echo "test"
 You should see the linter complaining, telling you something is wrong and you need to correct your javascript (check the lower grey line of sublime for the comment).
 
 If you don't see anything, check the console again.
+
+Last resort, if things are still not working, you can go there and troubleshoot: http://www.sublimelinter.com/en/latest/troubleshooting.html
