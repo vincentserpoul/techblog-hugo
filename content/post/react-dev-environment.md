@@ -19,7 +19,7 @@ To install babel
 npm install -g babel 
 ```
 
-Then in you javascript project, you canb create a .babelrc file with the following content: 
+Then within your javascript project, you can create a .babelrc file with the following content: 
 
 ```
 {
@@ -49,7 +49,7 @@ npm install -g eslint-plugin-react
 
 You can install a useful plugins in react, available in the package installer: React ES6 snippets.
 
-### eslintrc file for babel and react
+### .eslintrc file for babel and react
 
 You can use this eslintrc file as a starting point.
 
