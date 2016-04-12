@@ -7,27 +7,27 @@ topics = [ "javascript", "development" ]
 slug = "javascript-dev-env-setup"
 +++
 
-## NodeJS
+### NodeJS
 
 Go to the nodejs website and install nodejs latest stable version:
 
 https://nodejs.org/en/download/stable/
 
-## NPM
+### NPM
 
 Go to the npm website and follow the instructions
 
 https://docs.npmjs.com/getting-started/installing-node
 
-## Install nodejs essential packages
+### Install nodejs essential packages
 
 npm install -g eslint jshint webpack webpack-dev-server babel-eslint serve 
 
-## Install sublime-text essential plugins
+### Install sublime-text essential plugins
 
 With the help of the package manager, in sublime-text, install the following packages: babel, Sublime-Linter-Contrib-eslint, React ES6 snippets, SublimeLinter-jshint
 
-## Make sure your linter is working
+### Make sure your linter is working
 
 In sublime text, open the console (view > show console) and check if there is any error message.
 

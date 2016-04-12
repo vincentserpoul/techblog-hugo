@@ -7,7 +7,7 @@ topics = [ "react", "development" ]
 slug = "react-dev-env-setup"
 +++
 
-## Working with ES6-7
+### Working with ES6-7
 
 In order to work with ECMAScript 2015 and even with future implementations of ES, you can use Babel.
 
@@ -27,7 +27,7 @@ Then within your javascript project, you can create a .babelrc file with the fol
 }
 ```
 
-## React and its surrounding libraries
+### React and its surrounding libraries
 
 After starting using React, I realized it was vey good and was surrounded with libraries which makes it even better: redux, immutable, react-router...
 
@@ -35,21 +35,21 @@ I usually try to use these three, for most of the projects I'm working on. Somet
 
 The most important value added of redux, as well as immutable is the separation of concern. It gives you the power of designing components independantly from eachother.
 
-## React and its tools
+### React and its tools
 
 In order to help you develop with react and also redux, you have a few tools to help you.
 
-### eslint for react
+#### eslint for react
 
 ```
 npm install -g eslint-plugin-react
 ```
 
-### sublime text plugin
+#### sublime text plugin
 
 You can install a useful plugins in react, available in the package installer: React ES6 snippets.
 
-### .eslintrc file for babel and react
+#### .eslintrc file for babel and react
 
 You can use this eslintrc file as a starting point.
 
@@ -79,7 +79,7 @@ You can use this eslintrc file as a starting point.
 }
 ```
 
-### Chrome tools
+#### Chrome tools
 
 You can install react devTools in Chrome: 
 

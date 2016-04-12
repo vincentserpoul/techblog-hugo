@@ -8,7 +8,7 @@ slug = "golang-dev-env-setup"
 
 +++
 
-## Golang environment
+### Golang environment
 
 install golang
 

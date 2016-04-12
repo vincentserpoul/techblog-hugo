@@ -7,13 +7,13 @@ topics = [ "react", "development" ]
 slug = "learning-react"
 +++
 
-## React
+### React
 
 Nothing beats the facebook React page:
 
 https://facebook.github.io/react/docs/getting-started.html
 
-## Redux
+### Redux
 
 Nothing beats the redux tutorial:
 
@@ -23,10 +23,10 @@ And also available on egghead, by Dan Abramov himself:
 
 https://egghead.io/series/getting-started-with-redux
 
-## A great detailed introduction to your SPA setup
+### A great detailed introduction to your SPA setup
 
 http://blog.joanboixados.com/building-a-boilerplate-for-a-koa-redux-react-application-including-webpack-mocha-and-sass/
 
-## An advanced SPA (still under construction)
+### An advanced SPA (still under construction)
 
 https://www.gitbook.com/book/tonyhb/redux-without-profanity/details
