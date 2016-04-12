@@ -3,8 +3,8 @@ date = "2016-04-12T12:22:20+08:00"
 title = "learning react"
 description = "learning how to use react, redux, webpack..."
 tags = [ "react", "redux", "spa", "webpack"]
-topics = [ "sublime-text", "development" ]
-slug = "sublimetext-dev-env-setup"
+topics = [ "react", "development" ]
+slug = "learning-react"
 +++
 
 ## React
