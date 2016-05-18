@@ -23,6 +23,10 @@ And also available on egghead, by Dan Abramov himself:
 
 https://egghead.io/series/getting-started-with-redux
 
+A list of tutorials:
+
+https://github.com/happypoulp/redux-tutorial
+
 ### A great detailed introduction to your SPA setup
 
 http://blog.joanboixados.com/building-a-boilerplate-for-a-koa-redux-react-application-including-webpack-mocha-and-sass/

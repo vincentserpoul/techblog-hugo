@@ -21,11 +21,11 @@ https://docs.npmjs.com/getting-started/installing-node
 
 ### Install nodejs essential packages
 
-npm install -g eslint jshint webpack webpack-dev-server babel-eslint serve 
+npm install -g eslint webpack webpack-dev-server babel-eslint serve 
 
 ### Install sublime-text essential plugins
 
-With the help of the package manager, in sublime-text, install the following packages: babel, Sublime-Linter-Contrib-eslint, React ES6 snippets, SublimeLinter-jshint
+With the help of the package manager, in sublime-text, install the following packages: babel, Sublime-Linter-Contrib-eslint, React ES6 snippets
 
 ### Make sure your linter is working
 
