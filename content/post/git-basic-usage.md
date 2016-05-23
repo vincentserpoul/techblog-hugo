@@ -1,5 +1,5 @@
 +++
-date = "2014-02-20T08:27:27+08:00"
+date = "2015-02-20T08:27:27+08:00"
 title = "GIT basic usage"
 description = "git usage for beginner"
 tags = [ "git", "versioning", "beginner", "commands" ]
