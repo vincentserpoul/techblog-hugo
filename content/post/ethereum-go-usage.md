@@ -7,7 +7,7 @@ topics = [ "dev", "ethereum", "testrpc" ]
 slug = "ethereum-dev-environment"
 +++
 
-# Part 1 - Setup your ethereum node
+## Part 1 - Setup your ethereum node
 
 There are many ways you can setup a node to dev an Ethereum dapp.
 You can use the live network: not advisable obviously for cost and speed reasons.
@@ -17,7 +17,7 @@ You can the ethereum testrpc: easiest!
 
 I will talk about the last two setup in this article.
 
-## Using testrpc
+### Using testrpc
 
 Simply install through npm (if you want it globally available, add -g after install, as usual)
 ```
@@ -29,7 +29,7 @@ And then run it
 node_modules/ethereumjs-testrpc/bin/testrpc
 ```
 
-## Using geth
+### Using geth
 
 Download geth latest release (https://github.com/ethereum/go-ethereum/releases)
 and extract it.
@@ -55,7 +55,7 @@ chmod +x geth
 ./geth init ./customGenesis.json
 ```
 
-### Run your node with console attached
+#### Run your node with console attached
 
 ```
 ./geth \
@@ -70,7 +70,7 @@ chmod +x geth
     --dev console
 ```
 
-### Create a base account
+#### Create a base account
 
 ```
 > eth.accounts
@@ -83,7 +83,7 @@ Repeat passphrase:
 ["0xedea6958c57fc0cd4bd63b3e7b395393dc76bfb6"]
 ```
 
-### Mine on your newly created account
+#### Mine on your newly created account
 
 ```
 miner.setEtherbase(eth.accounts[0])
