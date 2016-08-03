@@ -92,4 +92,43 @@ miner.stop()
 
 Yeah, victory! my contract is deployed on my private ethereum node.
 
+Keep that address and also make sure to run
+
+```
+greeterCompiled.greeter.info.abiDefinition
+```
+
+in order to get the ABI that will be used later in javascript (Application Binary Interface)
+
+```
+[{
+    constant: false,
+    inputs: [],
+    name: "kill",
+    outputs: [],
+    type: "function"
+}, {
+    constant: true,
+    inputs: [],
+    name: "greet",
+    outputs: [{
+        name: "",
+        type: "string"
+    }],
+    type: "function"
+}, {
+    inputs: [{
+        name: "_greeting",
+        type: "string"
+    }],
+    type: "constructor"
+}]
+```
+
+## When done, kill it!
+
+```
+greeter.kill.sendTransaction({from:eth.accounts[0]})
+```
+
 Next we will simply interact with the contract.
