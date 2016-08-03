@@ -1,8 +1,8 @@
 +++
-date = "2016-08-04T13:00:00+08:00"
+date = "2016-08-03T13:00:00+08:00"
 title = "Ethereum first smart contract"
 description = "Ethereum dev environment"
-tags = [ "golang", "blockchain", "ethereum", "smart contract" ]
+tags = [ "blockchain", "ethereum", "smart contract" ]
 topics = [ "ethereum", "smart contract" ]
 slug = "ethereum-first-contract"
 +++
