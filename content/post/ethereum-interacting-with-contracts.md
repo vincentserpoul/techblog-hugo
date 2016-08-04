@@ -55,7 +55,6 @@ then, use this html to interact with your contract on the local node:
     <div id="diff"></div>
 </body>
 </html>
-
 ```
 
 and... It works, you can see the balance on the contract!
