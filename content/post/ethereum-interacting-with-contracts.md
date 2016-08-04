@@ -1,7 +1,7 @@
 +++
 date = "2016-08-03T20:00:00+08:00"
-title = "Interacting with an Ethereum smart contracts"
-description = "frontend javascript to interact with smart contracts"
+title = "Interacting with an Ethereum smart contract"
+description = "frontend javascript to interact with smart contract"
 tags = [ "blockchain", "ethereum", "smart contract", "javascript", "web3", "dapp" ]
 topics = [ "ethereum", "smart contract", "javascript", "web3", "dapp" ]
 slug = "ethereum-interacting-with-contracts"
