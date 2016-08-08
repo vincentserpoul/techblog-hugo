@@ -67,6 +67,20 @@ Just copy to your contract folder:
 
 ## Migrate
 
+Here is the simple migration script I used
+
+```
+module.exports = (deployer) => {
+  deployer.deploy(
+    HumanStandardToken,
+        1000000,
+        'mold',
+        '0',
+        'M'
+  );
+};
+```
+
 In order to compile and deploy your contracts in the rpc node you configured in truffle.js, you need to launch the following command:
 
 ```
@@ -84,28 +98,28 @@ const it = require('mocha').it;
 const assert = require('chai').assert;
 
 contract('HumanStandardToken', (accounts) => {
-  it('should put 1000000 rians in the first account', () => {
-    const rians = HumanStandardToken.deployed();
+  it('should put 1000000 molds in the first account', () => {
+    const molds = HumanStandardToken.deployed();
     const initSupply = 1000000;
 
-    return rians.balanceOf(accounts[0])
+    return molds.balanceOf(accounts[0])
       .then(balance => assert.equal(
           balance.valueOf(), initSupply,
-          `${initSupply} rians weren't in the first account`
+          `${initSupply} molds weren't in the first account`
         )
       );
   });
 
-  it('should transfer rians to another user', () => {
-    const rians = HumanStandardToken.deployed();
+  it('should transfer molds to another user', () => {
+    const molds = HumanStandardToken.deployed();
 
-    return rians.transfer(accounts[1], 100, { from: accounts[0] })
+    return molds.transfer(accounts[1], 100, { from: accounts[0] })
       .then(
-        () => rians.balanceOf(accounts[1])
+        () => molds.balanceOf(accounts[1])
       )
       .then(balance => assert.equal(
           balance.valueOf(), 100,
-          `${accounts[1]} didn't was not transfered 100 rians but ${balance.valueOf()}`
+          `${accounts[1]} didn't was not transfered 100 molds but ${balance.valueOf()}`
         )
       );
   });
