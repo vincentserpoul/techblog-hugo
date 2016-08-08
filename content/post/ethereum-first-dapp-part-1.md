@@ -126,7 +126,7 @@ contract('HumanStandardToken', (accounts) => {
 });
 ```
 
-* / ! \ *
+** / ! \ **
 I was stuck for hours because of the way contract functions can be called.
 There are two types of actions on the Ethereum blockchain. Action which change the contract states (like transfer funds for example), and the one which don't (like get balance, for example).
 In truffle, you call the latter with a "call" on the contract object, whereas the former doesn't need it... Confusing, isn't it?
