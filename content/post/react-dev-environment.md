@@ -15,13 +15,13 @@ Babel is a transpiler, it will convert your ES6-7 to plain ES5 javascript that m
 
 To install babel
 
-```
+```shell
 npm install -g babel 
 ```
 
 Then within your javascript project, you can create a .babelrc file with the following content: 
 
-```
+```json
 {
   "presets": ["es2015", "stage-0", "react"]
 }
@@ -41,7 +41,7 @@ In order to help you develop with react and also redux, you have a few tools to 
 
 #### eslint for react
 
-```
+```shell
 npm install -g eslint-plugin-react
 ```
 
@@ -53,7 +53,7 @@ You can install a useful plugins in react, available in the package installer: R
 
 You can use this eslintrc file as a starting point.
 
-```
+```json
 {
   "extends": "airbnb",
   "ecmaFeatures": {
@@ -91,7 +91,7 @@ https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfk
 
 redux devTools will require you to modifiy the way you call create store:
 
-```
+```javascript
 store = (window.devToolsExtension ? window.devToolsExtension()(createStore) : createStore)([...your content here]);
 ```
 

@@ -35,7 +35,7 @@ Download geth latest release (https://github.com/ethereum/go-ethereum/releases)
 and extract it.
 
 Create a file customGenesis.json
-```
+```json
 {
   "nonce": "0x0000000000000042",
   "timestamp": "0x0",
@@ -50,14 +50,14 @@ Create a file customGenesis.json
 ```
 
 then init yout node with the genesis block above
-```
+```shell
 chmod +x geth
 ./geth init ./customGenesis.json
 ```
 
 #### Run your node with console attached
 
-```
+```shell
 ./geth \
     --identity "gethTest" \
     --rpc --rpcport "9012" \

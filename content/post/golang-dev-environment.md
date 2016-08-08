@@ -17,10 +17,12 @@ Within [sublimetext, from the package manager](/sublimetext-dev-environment), in
 
 install go/tools:
 
-    go get -u golang.org/x/tools/cmd/goimports
-    go get -u golang.org/x/tools/cmd/vet
-    go get -u golang.org/x/tools/cmd/oracle
-    go get -u golang.org/x/tools/cmd/godoc
+```shell
+go get -u golang.org/x/tools/cmd/goimports
+go get -u golang.org/x/tools/cmd/vet
+go get -u golang.org/x/tools/cmd/oracle
+go get -u golang.org/x/tools/cmd/godoc
+```
 
 install gometalinter (https://github.com/alecthomas/gometalinter)
 
@@ -32,7 +34,7 @@ install gocov (https://github.com/axw/gocov)
 
 Here is the package settings I use for gosublime:
 
-```
+```json
 {
 
     // you may set specific environment variables here

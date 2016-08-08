@@ -10,7 +10,7 @@ slug = "git-basic-usage"
 ### Git basic commands
 
 #### When you have a new repo
-```
+```shell
     git clone git@github.com:vincentserpoul/rbac.git
 ```
 
@@ -28,20 +28,20 @@ Host github
 
 #### When you have a new modification ready for commit
 
-```
+```shell
 git status
 ```
 
 You will get an overview of what's new
 If there is any new files (Untracked files), you will first need to add them:
 
-```
+```shell
 git add mynewfile.ext
 ```
 
 Then
 
-```
+```shell
 git status
 ```
 
@@ -49,13 +49,13 @@ it will give you the list of the files you are about to commit (Changes not stag
 You can then commit all the files or the selected ones.
 Group the commits by functionalities and follow [this](http://chris.beams.io/posts/git-commit/) to write your commit message properly (TL;DR: use imperative for the verb - no ing - and keep it short for the subject line, 50 chars)
 
-```
+```shell
 git commit -m "add feature A" -a
 ```
 
 Once you reached that, you will need to first sync with the remote repo
 
-```
+```shell
 git fetch origin master
 git rebase origin/master
 ```
@@ -64,7 +64,7 @@ This will first get all the commits in the remote repo (supposingly called origi
 If there are any issues, you will have to resolve them.
 Modify the problematic file and then:
 
-```
+```shell
 git add problematicfile.ext
 git rebase --continue
 ```

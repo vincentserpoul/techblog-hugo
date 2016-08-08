@@ -9,7 +9,7 @@ slug = "ethereum-first-contract"
 
 ## Launch your geth (or testrpc) private instance
 
-```
+```shell
 ./geth \
     --identity "gethTest" \
     --rpc --rpcport "9012" \
@@ -31,7 +31,7 @@ I had an issue when I followed the contract tutorial, my contract would not be m
 The issue was that my account was locked :/ and the greeter contract stupidly silently fails...
 Here is the modified code to see the obvious error.
 
-```
+```javascript
 var _greeting = "Hello World!"
 var greeterContract = web3.eth.contract(greeterCompiled.greeter.info.abiDefinition);
 

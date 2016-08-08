@@ -35,7 +35,7 @@ Alright, let's check if everything is fine. Let's create a test project in a new
 
 Add a .eslintrc file, with this content: 
 
-```
+```json
 {
   "extends": "airbnb",
   "ecmaFeatures": {
@@ -56,7 +56,7 @@ Add a .eslintrc file, with this content:
 
 then create a simple test.js with this content:
 
-```
+```shell
 echo "test"
 ```
 

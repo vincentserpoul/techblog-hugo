@@ -22,7 +22,7 @@ get the latest web3-light.min.js js from https://github.com/ethereum/web3.js/rel
 
 then, use this html to interact with your contract on the local node:
 
-```
+```html
 <!doctype>
 <html>
 <head>
@@ -61,7 +61,7 @@ and... It works, you can see the balance on the contract!
 
 ## Let's greet now
 
-```
+```html
 <!doctype>
 <html>
 <head>

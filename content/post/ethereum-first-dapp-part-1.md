@@ -11,13 +11,13 @@ slug = "ethereum-first-dapp-part-1"
 
 ## Prepare your folder for your dapp
 
-```
+```shell
 mkdir dapp
 ```
 
 inside this folder, we'll create one folder for truffle, one for geth.
 
-```
+```shell
 cd dapp
 mkdir truffle geth
 ```
@@ -28,7 +28,7 @@ We are going to use two Ethereum clients, one for tests and devs, testrpc and on
 
 Let's install truffle and testrpc
 
-```
+```shell
 npm install ethereumjs-testrpc truffle
 ```
 
@@ -38,7 +38,7 @@ Truffle is a-m-a-z-i-n-g for contract development. It will allow you to unit tes
 
 First, init truffle scaffolding (I don't like -g install XD, so bear with my node_modules folder).
 
-```
+```shell
 node_modules/truffle/cli.js init
 ```
 
@@ -48,7 +48,7 @@ This will create different folders. You can have a look at http://truffle.readth
 
 Let's launch the ethereumjs-testrpc
 
-```
+```shell
 node_modules/ethereumjs-testrpc/bin/testrpc
 ```
 
@@ -69,7 +69,7 @@ Just copy to your contract folder:
 
 Here is the simple migration script I used
 
-```
+```javascript
 module.exports = (deployer) => {
   deployer.deploy(
     HumanStandardToken,
@@ -83,7 +83,7 @@ module.exports = (deployer) => {
 
 In order to compile and deploy your contracts in the rpc node you configured in truffle.js, you need to launch the following command:
 
-```
+```shell
 node_modules/truffle/cli.js migrate
 ```
 
@@ -93,7 +93,7 @@ If your code compiles, it will create javascript objects for each of your contra
 
 Here is an example of tests on HumanStandardToken (ES6)
 
-```
+```javascript
 const it = require('mocha').it;
 const assert = require('chai').assert;
 
@@ -134,13 +134,13 @@ I found out later that there are constant functions in solidity, which basically
 
 Now you can try if everything works fine, launch testrpc
 
-```
+```shell
 node_modules/ethereumjs-testrpc/bin/testrpc
 ```
 
 and open a new terminal and launch the tests
 
-```
+```shell
 node_modules/truffle/cli.js test
 ```
 
@@ -149,7 +149,7 @@ node_modules/truffle/cli.js test
 Modify your truffle.js to whichever node you want to migrate your contracts to.
 Mine is local geth, listening on port 9012, so truffle.js will become
 
-```
+```javascript
 module.exports = {
   rpc: {
     host: 'localhost',
@@ -160,7 +160,7 @@ module.exports = {
 
 then migrate
 
-```
+```shell
 node_modules/truffle/cli.js migrate
 ```
 
