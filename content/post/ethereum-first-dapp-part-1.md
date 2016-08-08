@@ -118,3 +118,38 @@ There are two types of actions on the Ethereum blockchain. Action which change t
 In truffle, you call the latter with a "call" on the contract object, whereas the former doesn't need it... Confusing, isn't it?
 I found out later that there are constant functions in solidity, which basically mean functions that don't change the contract state. When you specify these functions in you contract definition as "constant", then, truffle doesn't need the call... Problem solved, everything now looks uniform.
 
+Now you can try if everything works fine, launch testrpc
+
+```
+node_modules/ethereumjs-testrpc/bin/testrpc
+```
+
+and open a new terminal and launch the tests
+
+```
+node_modules/truffle/cli.js test
+```
+
+## Creation of the contracts on a private geth or even morden
+
+Modify your truffle.js to whichever node you want to migrate your contracts to.
+Mine is local geth, listening on port 9012, so truffle.js will become
+
+```
+module.exports = {
+  rpc: {
+    host: 'localhost',
+    port: 9012,
+  },
+};
+```
+
+then migrate
+
+```
+node_modules/truffle/cli.js migrate
+```
+
+Et voila! if everything is ok, truffle should have created your contracts and updated the built contracts with the right contract addresses in build/contracts.
+
+Now, let's play with these contracts on geth! See you on part 2.
