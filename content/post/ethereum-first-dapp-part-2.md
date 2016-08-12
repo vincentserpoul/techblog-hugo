@@ -39,6 +39,15 @@ export function ethConnect(web3Provider) {
 ### reducers
 
 ```javascript
+/*
+ *
+ * EthConnect reducer
+ *
+ */
+
+// eslint exception for web3
+/* global web3:true */
+
 import { fromJS } from 'immutable';
 import Web3 from 'web3';
 import { ETH_CONNECT } from './constants';
@@ -58,9 +67,17 @@ function ethConnectReducer(state = initialState, action) {
 }
 
 const web3Connect = (web3Provider) => {
-  const web3 = new Web3(new Web3.providers.HttpProvider(web3Provider));
-  if (web3.isConnected()) {
-    return web3;
+  let web3Connection;
+
+  // If mist or metamask or else is already injected there as a provider
+  if (typeof web3 !== 'undefined') {
+    web3Connection = new Web3(web3.currentProvider);
+  } else {
+    web3Connection = new Web3(new Web3.providers.HttpProvider(web3Provider));
+  }
+
+  if (web3Connection.isConnected()) {
+    return web3Connection;
   }
 
   return false;
@@ -68,6 +85,7 @@ const web3Connect = (web3Provider) => {
 
 
 export default ethConnectReducer;
+
 ```
 
 ### selectors

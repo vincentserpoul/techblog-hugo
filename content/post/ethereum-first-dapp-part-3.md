@@ -7,6 +7,7 @@ topics = [ "dev", "ethereum", "metamask" ]
 slug = "ethereum-first-dapp-part-3"
 +++
 
+## setting up a light wallet
 In order to have a setup close to what the DAPP would be, we will use (metamask) [http://www.metamask.io] as a light wallet (there are other choices).
 
 Metamask allows you to connect to a custom node.
@@ -37,3 +38,12 @@ geth --datadir "./testChain" account import ./pvkey.txt
 ```
 
 if you look at the list of accounts in your local node, you should see now the newly imported account.
+
+## give me ether!
+
+Now, simply transfer some Ether to the newly imported account
+In geth, for example:
+
+```
+eth.sendTransaction({from: '0xfffffff', to: '0xddddddd', value: web3.toWei(1000, "ether")})
+```
