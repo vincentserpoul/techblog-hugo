@@ -13,7 +13,7 @@ I just watched that amazing videos from Matt Ranney
 
 Here are my takeaways and opinionated summary:
 
-* Use RPC for service to service communications: [gRPC](http://www.grpc.io/)seems to be a good way of tacling it
+* Use RPC for service to service communications: [gRPC](http://www.grpc.io/) seems to be a good way of tackling it
 * Use many repositories
 * Profiling should be unified: flamegraph seems to be universal (Go profiling is great too)
 * Premature optimization is bad but performance monitoring is crucial!
