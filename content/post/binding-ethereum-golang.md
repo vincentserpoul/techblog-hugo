@@ -38,9 +38,9 @@ This is a very simple contract that we will take as an example.
 
 ## Getting the right tools for binding
 
-A good starting point is this (wiki)[https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts]
+A good starting point is this [wiki](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts).
 
-You will need to follow the install procedure of (go-ethereum)[https://github.com/ethereum/go-ethereum].
+You will need to follow the install procedure of [go-ethereum](https://github.com/ethereum/go-ethereum).
 
 Once done, you should have the abigen executable available on your command line.
 
@@ -50,7 +50,7 @@ Once done, you should have the abigen executable available on your command line.
 abigen --sol contracts/Trigger.sol --pkg main --out trigger.go
 ```
 
-If everything is fine, you should now have a file named Trigger.go
+If everything is fine, you should now have a file named trigger.go
 
 ## Using the generated file from main
 
@@ -123,4 +123,4 @@ Et voila!
 ## Existing issues
 
 We have still not talked about listening to events.
-There are also still issues as soon as the contract imports other contracts: abigen doesn't allow you to do it.
+There are also still issues as soon as the contract imports other contracts, I will finish the writing once these are done.
