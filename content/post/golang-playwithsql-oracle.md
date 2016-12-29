@@ -2,8 +2,8 @@
 date = "2016-12-27T00:44:00+08:00"
 title = "Golang and Oracle"
 description = "How to use Oracle in golang"
-tags = [ "golang", "oracle", "linux", "sql" ]
-topics = [ "golang", "oracle", "linux", "sql" ]
+tags = [ "golang", "oracle", "linux", "macosx", "sql" ]
+topics = [ "golang", "oracle", "linux", "macosx", "sql" ]
 slug = "golang-playwithsql-oracle"
 +++
 
@@ -11,7 +11,7 @@ slug = "golang-playwithsql-oracle"
 
 To this day, the most up to date library seems to be [rana/ora](https://github.com/rana/ora)
 
-## How to install (linux)
+## How to install (linux && macosx)
 
 Download [Oracle Instant Client for linux x64](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html): both packages Basic and SDK
 Unzip each of them in the same folder /opt/oracle
@@ -22,13 +22,6 @@ cd /opt/oracle
 unzip ~/Downloads/instantclient-basic-linux.x64-12.1.0.2.0.zip
 unzip ~/Downloads/instantclient-sdk-linux.x64-12.1.0.2.0.zip
 cd /opt/oracle/instantclient_12_1
-```
-
-Follow the instructions from Oracle:
-
-```powershell
-ln -s libclntsh.so.12.1 libclntsh.so
-ln -s libocci.so.12.1 libocci.so
 ```
 
 Add the necessary env variables and paths:
@@ -57,9 +50,36 @@ Libs.private:
 Cflags: -I${includedir}
 ```
 
-then simply
+## On linux
+
+Follow the instructions from Oracle:
 
 ```powershell
+ln -s libclntsh.so.12.1 libclntsh.so
+ln -s libocci.so.12.1 libocci.so
+```
+
+## On macosx
+
+Follow the instructions from Oracle:
+
+```powershell
+ln -s libclntsh.dylib.12.1 libclntsh.dylib
+ln -s libocci.dylib.12.1 libocci.dylib
+```
+
+One more step is necessary for macosx.
+
+You have to add your machine name in your /etc/hosts for the 127.0.0.1
+
+```
+127.0.0.1 localhost YOURMACHINENAME
+```
+
+## Install the package
+
+```powershell
+cd $GOPATH/src/gopkg.in/rana/ora.v3
 go install ./...
 ```
 
