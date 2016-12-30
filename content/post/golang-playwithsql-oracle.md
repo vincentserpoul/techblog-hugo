@@ -11,7 +11,7 @@ slug = "golang-playwithsql-oracle"
 
 To this day, the most up to date library seems to be [rana/ora](https://github.com/rana/ora)
 
-## How to install (linux && macosx)
+## How to install (linux & macosx)
 
 Download [Oracle Instant Client for linux x64](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html): both packages Basic and SDK
 Unzip each of them in the same folder /opt/oracle
