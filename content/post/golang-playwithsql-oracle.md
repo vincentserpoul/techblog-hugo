@@ -19,8 +19,8 @@ Unzip each of them in the same folder /opt/oracle
 ```powershell
 mkdir -p /opt/oracle
 cd /opt/oracle
-unzip ~/Downloads/instantclient-basic-linux.x64-12.1.0.2.0.zip
-unzip ~/Downloads/instantclient-sdk-linux.x64-12.1.0.2.0.zip
+unzip ~/Downloads/instantclient-basiclite-linux.x64-12.2.0.1.0.zip
+unzip ~/Downloads/instantclient-sdk-linux.x64-12.2.0.1.0.zip
 cd /opt/oracle/instantclient_12_1
 ```
 
@@ -28,19 +28,19 @@ Add the necessary env variables and paths:
 
 ```powershell
 # Oracle
-export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_1:/opt/oracle/instantclient_12_1/sdk/include
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_2:/opt/oracle/instantclient_12_2/sdk/include
 export PKG_CONFIG_PATH=/opt/oracle
-export PATH=/opt/oracle/instantclient_12_1:$PATH
-export ORACLE_HOME=/opt/oracle/instantclient_12_1:/opt/oracle/instantclient_12_1/sdk/include
+export PATH=/opt/oracle/instantclient_12_2:$PATH
+export ORACLE_HOME=/opt/oracle/instantclient_12_2:/opt/oracle/instantclient_12_2/sdk/include
 ```
 
-copy from the go package ./contrib/oci8.pc to /opt/oracle and modify its content to:
+copy from the [go package ./contrib/oci8.pc](https://github.com/rana/ora/tree/v4/contrib) to /opt/oracle and modify its content to:
 
 ```
-version=12.1
+version=12.2
 
-includedir=/opt/oracle/instantclient_12_1/sdk/include
-libdir=/opt/oracle/instantclient_12_1
+includedir=/opt/oracle/instantclient_12_2/sdk/include
+libdir=/opt/oracle/instantclient_12_2
 
 Name: oci8
 Description: Oracle database engine
@@ -55,8 +55,8 @@ Cflags: -I${includedir}
 Follow the instructions from Oracle:
 
 ```powershell
-ln -s libclntsh.so.12.1 libclntsh.so
-ln -s libocci.so.12.1 libocci.so
+ln -s /opt/oracle/instantclient_12_2/libclntsh.so.12.1 /opt/oracle/instantclient_12_2/libclntsh.so
+ln -s /opt/oracle/instantclient_12_2/libocci.so.12.1 /opt/oracle/instantclient_12_2/libocci.so
 ```
 
 ## On macosx
@@ -64,8 +64,8 @@ ln -s libocci.so.12.1 libocci.so
 Follow the instructions from Oracle:
 
 ```powershell
-ln -s libclntsh.dylib.12.1 libclntsh.dylib
-ln -s libocci.dylib.12.1 libocci.dylib
+ln -s /opt/oracle/instantclient_12_2/libclntsh.dylib.12.1 /opt/oracle/instantclient_12_2/libclntsh.dylib
+ln -s /opt/oracle/instantclient_12_2/libocci.dylib.12.1 /opt/oracle/instantclient_12_2/libocci.dylib
 ```
 
 One more step is necessary for macosx.
@@ -79,8 +79,7 @@ You have to add your machine name in your /etc/hosts for the 127.0.0.1
 ## Install the package
 
 ```powershell
-cd $GOPATH/src/gopkg.in/rana/ora.v3
-go install ./...
+go get -u cd gopkg.in/rana/ora.v4
 ```
 
 You should be all good!
