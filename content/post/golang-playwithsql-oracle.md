@@ -37,10 +37,12 @@ export ORACLE_HOME=/opt/oracle/instantclient_12_2:/opt/oracle/instantclient_12_2
 copy from the [go package ./contrib/oci8.pc](https://github.com/rana/ora/tree/v4/contrib) to /opt/oracle and modify its content to:
 
 ```
+prefix=/opt/oracle/instant_client_12_2
 version=12.2
+build=client64
 
-includedir=/opt/oracle/instantclient_12_2/sdk/include
-libdir=/opt/oracle/instantclient_12_2
+libdir=${prefix}/lib
+includedir=${prefix}/sdk/include
 
 Name: oci8
 Description: Oracle database engine
@@ -52,7 +54,7 @@ Cflags: -I${includedir}
 
 ## On linux
 
-Follow the instructions from Oracle:
+Follow the [instructions](http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html#ic_x64_inst) from Oracle:
 
 ```powershell
 ln -s /opt/oracle/instantclient_12_2/libclntsh.so.12.1 /opt/oracle/instantclient_12_2/libclntsh.so
