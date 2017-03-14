@@ -28,20 +28,19 @@ Add the necessary env variables and paths:
 
 ```powershell
 # Oracle
-export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_2:/opt/oracle/instantclient_12_2/sdk/include
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_12_2:$LD_LIBRARY_PATH
 export PKG_CONFIG_PATH=/opt/oracle
-export PATH=/opt/oracle/instantclient_12_2:$PATH
-export ORACLE_HOME=/opt/oracle/instantclient_12_2:/opt/oracle/instantclient_12_2/sdk/include
+export ORACLE_HOME=$LD_LIBRARY_PATH
 ```
 
 copy from the [go package ./contrib/oci8.pc](https://github.com/rana/ora/tree/v4/contrib) to /opt/oracle and modify its content to:
 
 ```
-prefix=/opt/oracle/instant_client_12_2
+prefix=/opt/oracle/instantclient_12_2
 version=12.2
 build=client64
 
-libdir=${prefix}/lib
+libdir=${prefix}
 includedir=${prefix}/sdk/include
 
 Name: oci8
