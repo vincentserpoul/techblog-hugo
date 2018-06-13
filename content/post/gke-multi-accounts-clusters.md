@@ -5,7 +5,6 @@ description = "Using GKE with multiple accounts and clusters"
 tags = [ "kubernetes", "GKE", "gcloud" ,"googlecloud" ]
 topics = [ "kubernetes", "GKE", "gcloud" ,"googlecloud" ]
 slug = "gke-multi-accounts-clusters"
-draft = true
 +++
 
 ## Google cloud configs
