@@ -5,6 +5,7 @@ description = "the current market of decentralized insurance"
 tags = [ "insurance", "blockchain", "p2p" ,"decentralized" ]
 topics = [ "insurance", "blockchain", "p2p" ,"decentralized" ]
 slug = "decentralized-insurance"
+draft = true
 +++
 
 ## Listing current actors
