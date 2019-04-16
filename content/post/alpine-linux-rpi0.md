@@ -175,10 +175,10 @@ Diskless alpine is great as the fs is readonly and it's the safest and cleanest 
 Problem: the RAM is not THAT big in a rpi0, hence, once you start playing with things that are bigger, it doesn't work.
 Solution: use the overlayfs, it will allow you to deport some folders in the last, biggest partition, in a persistent manner.
 
-For example, if you want to use docker, you can overlay /var/lib/docker:
+For example, if you want to use /var/test, you can overlay /var/test:
 
 ```bash
-echo "overlay /var/lib/docker overlay lowerdir=/var/lib/docker,upperdir=/media/mmcblk0p3/var/lib/docker 0 0" >> ~/alpine-install/lb/etc/fstab
+echo "overlay /var/test overlay lowerdir=/var/test,upperdir=/media/mmcblk0p3/var/test 0 0" >> ~/alpine-install/lb/etc/fstab
 ```
 
 Recompress everything:
@@ -206,4 +206,4 @@ Tips if you have errors, on you rpi, just uncomment the two following lines in /
     LogLevel INFO
 ```
 
-## Enjoy!
+## Enjoy
