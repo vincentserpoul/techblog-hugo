@@ -69,6 +69,12 @@ Extract your previously downloaded alpine linux to the root of this partition:
 sudo tar -C /run/media/youruser/24CB-FC98 -xzf ~/Downloads/alpine-rpi-3.9.2-armhf.tar.gz
 ```
 
+For reasons (in the [alpine wiki](https://wiki.alpinelinux.org/wiki/Raspberry_Pi_Zero_W_-_Installation)):
+
+```bash
+echo enable_uart=1 > /run/media/youruser/24CB-FC98/usercfg.txt
+```
+
 unmount the sdcard:
 
 ```bash
@@ -96,11 +102,20 @@ setup-alpine
 
 And let yourself be guided, don't forget to set the config and cache partition mmcblk0p2 to be saved to.
 
-As of now, it seems there is a [bug](https://bugs.alpinelinux.org/issues/8025) for the dhcp lease, just follow [this comment](https://bugs.alpinelinux.org/issues/8025#note-11)
-and add wpa_supplicant at boot:
+As of now, it seems there is a [bug](https://bugs.alpinelinux.org/issues/8025) for the dhcp lease, just install wpa_supplicant and
+and add it to boot:
 
 ```bash
+apk add wpa_supplicant
 rc-update add wpa_supplicant boot
+```
+
+Enable community repositories (for visudo):
+
+```bash
+vi /etc/apk/repositories
+uncomment http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
+apk update
 ```
 
 Add a user with no pass, add its home directory to the config partition and add it to the sudoers
@@ -114,16 +129,10 @@ chown root:root /etc/sudoers
 lbu add /home/maintenance
 ```
 
-Bonus: change the welcome message:
+And don't forget the commit and most importantly, don't forget to set a password for it, so it's not visible to anyone getting access to your sdcard!
 
 ```bash
-echo "Welcome home!" > /etc/motd
-```
-
-And don't forget the commit!
-
-```bash
-lbu commit
+lbu commit -p YOURPASSWORD
 ```
 
 ## Back on your local computer
@@ -147,9 +156,10 @@ mkdir -p ~/alpine-install/lb/home/maintenance/.ssh
 cat ~/.ssh/id_rsa.pub > ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
 chmod 700 ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
 chmod 600 ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
+chown root:root ~/alpine-install/lb/etc/sudoers
 ```
 
-Also, allow public key login (PubkeyAuthentication yes) and remove password auth (PasswordAuthentication no ChallengeResponseAuthentication no) in /etc/ssh/sshd_config.
+### Auto mount mmcblk0p3
 
 Add as well your 3rd partition to fstab:
 
@@ -157,19 +167,82 @@ Add as well your 3rd partition to fstab:
 echo "/dev/mmcblk0p3 /media/mmcblk0p3 ext4 rw,relatime 0 0" >> ~/alpine-install/lb/etc/fstab
 ```
 
-apk add e2fsprogs
-
-### repositories
-
-Uncomment community packages as well, it will most probably be useful later on:
+### Bonus: change the welcome message
 
 ```bash
-vi /etc/apk/repositories
-uncomment http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
-apk update
+echo "Welcome home!" > ~/alpine-install/etc/motd
 ```
 
-### More disk avail
+### Copy back the lbu to your sdcard
+
+Recompress everything (be careful to change the host to your selected hostname):
+
+```bash
+sudo tar -czvf ~/alpine-install/host.apkovl.tar.gz -C ~/alpine-install/lb .
+rm -rf ~/alpine-install/lb
+sudo cp ~/alpine-install/host.apkovl.tar.gz /sda2mountpoint/
+umount /sda2mountpoint
+```
+
+## Connecting through ssh
+
+Put back the sdcar in the rpi0 and boot.
+
+Connect via ssh with the maintenance user:
+
+```bash
+ssh -vv -i ~/.ssh/id_rsa maintenance@192.168.1.100
+```
+
+Tips if you have errors, on you rpi, just uncomment the two following lines in /etc/sshd_config, and you should see logs in /var/log/auth.log:
+
+```code
+    SyslogFacility AUTH
+    LogLevel INFO
+```
+
+## Securing SSH connection
+
+Let's secure the ssh connection by removing the password access and enabling 2FA
+
+Install needed packages:
+
+```bash
+apk add google-authenticator openssh-server-pam
+```
+
+As the maintenance user, run googleauthenticator and follow the config (don't forget to add your 2FA).
+
+Inside /etc/ssh/sshdconfig:
+(add if not present)
+
+```bash
+ChallengeResponseAuthentication yes
+UsePAM yes
+PasswordAuthentication no
+AuthenticationMethods publickey,keyboard-interactive
+```
+
+then create the PAM sshd conf:
+
+```bash
+echo "auth required pam_google_authenticator.so" > /etc/pam.d/sshd
+```
+
+and restart sshd
+
+```bash
+sudo rc-service sshd restart
+```
+
+You can just run the googleauthenticator ith the maintenance user and still disallow root login in sshd.
+and don't forget to commit!
+
+```bash
+lbu commit -p YOURPASSWORD
+```
+
+### Addendum: More disk available
 
 Diskless alpine is great as the fs is readonly and it's the safest and cleanest wa to install it.
 Problem: the RAM is not THAT big in a rpi0, hence, once you start playing with things that are bigger, it doesn't work.
@@ -180,30 +253,3 @@ For example, if you want to use /var/test, you can overlay /var/test:
 ```bash
 echo "overlay /var/test overlay lowerdir=/var/test,upperdir=/media/mmcblk0p3/var/test 0 0" >> ~/alpine-install/lb/etc/fstab
 ```
-
-Recompress everything:
-
-```bash
-rm ~/alpine-install/host.apkovl.tar.gz
-tar -czvf ~/alpine-install/host.apkovl.tar.gz -C ~/alpine-install/lb .
-rm -rf ~/alpine-install/lb
-sudo cp ~/alpine-install/host.apkovl.tar.gz /sda2mountpoint/
-umount /sda2mountpoint
-```
-
-## Connecting through ssh
-
-Connect via ssh with the maintenance user:
-
-```bash
-ssh -vv -i ~/.ssh/id_rsa_home_iot maintenance@192.168.1.100
-```
-
-Tips if you have errors, on you rpi, just uncomment the two following lines in /etc/sshd_config, and you should see logs in /var/log/auth.log:
-
-```code
-    SyslogFacility AUTH
-    LogLevel INFO
-```
-
-## Enjoy

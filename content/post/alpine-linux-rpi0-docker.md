@@ -19,7 +19,7 @@ On you local linux, mount the partition containing alpine files.
 In the cmdline.txt, add the following:
 
 ```bash
-...  cgroup_enable=memory cgroup_enable=cpuset swapaccount=1
+echo -ne " cgroup_enable=memory cgroup_enable=cpuset swapaccount=1" >> /run/media/youruser/xxx/cmdline.txt
 ```
 
 Docker needs all cgroups enabled, so this will do the trick
@@ -29,11 +29,26 @@ Docker needs all cgroups enabled, so this will do the trick
 As simple as:
 
 ```bash
-apk add docker
-rc-update add docker boot
+sudo apk add docker
+sudo rc-update add docker boot
+sudo rc-service docker start
 ```
 
-reboot and check that everything is ok:
+To make sure your docker env doesn't go in memory (512MB RAM won't bring you far...), set it on mmcblk0p3 by editing /etc/docker/daemon.json:
+
+```bash
+{
+        "exec-root": "/media/mmcblk0p3/var/run/docker",
+        "data-root": "/media/mmcblk0p3/var/lib/docker",
+        "no-new-privileges": false
+}
+```
+
+and restart the service:
+
+```bash
+sudo rc-service docker restart
+```
 
 ```bash
 docker run --rm hypriot/armhf-hello-world
