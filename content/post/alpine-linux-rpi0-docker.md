@@ -4,7 +4,7 @@ title = "installing docker on alpine linux"
 description = "installing docker"
 tags = [ "linux", "alpine", "rpi", "rpi0", "docker"]
 topics = [ "linux", "alpine", "rpi", "docker"]
-slug = "alpine-linux-rpi0-docke"
+slug = "alpine-linux-rpi0-docker"
 +++
 
 ## Prerequisites
