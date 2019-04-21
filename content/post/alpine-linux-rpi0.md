@@ -118,7 +118,7 @@ uncomment http://dl-cdn.alpinelinux.org/alpine/latest-stable/community
 apk update
 ```
 
-Add a user with no pass, add its home directory to the config partition and add it to the sudoers
+Add a user and add its group to the sudoers:
 
 ```bash
 addgroup -S maintenance && adduser maintenance -G maintenance
@@ -142,8 +142,8 @@ lbu commit -p YOURPASSWORD
 Unzip the local backup tarball (host.apkovl.tar.gz):
 
 ```bash
-mkdir -p ~/alpine-install/lb
-tar -C ~/alpine-install/lb -xzf /sda2mountpoint/host.apkovl.tar.gz
+mkdir -p ~/alpine-install/armv6/lb
+tar -C ~/alpine-install/armv6/lb -xzf /sda2mountpoint/host.apkovl.tar.gz
 ```
 
 ### ssh connection
@@ -152,11 +152,11 @@ Add your ssh key to the authorized_keys of the maintenance user and allow ssh co
 
 ```bash
 ssh-keygen -t rsa -C "youremail"
-mkdir -p ~/alpine-install/lb/home/maintenance/.ssh
-cat ~/.ssh/id_rsa.pub > ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
-chmod 700 ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
-chmod 600 ~/alpine-install/lb/home/maintenance/.ssh/authorized_keys
-chown root:root ~/alpine-install/lb/etc/sudoers
+mkdir -p ~/alpine-install/armv6/lb/home/maintenance/.ssh
+cat ~/.ssh/id_rsa.pub > ~/alpine-install/armv6/lb/home/maintenance/.ssh/authorized_keys
+chmod 700 ~/alpine-install/armv6/lb/home/maintenance/.ssh
+chmod 600 ~/alpine-install/armv6/lb/home/maintenance/.ssh/authorized_keys
+chown root:root ~/alpine-install/armv6/lb/etc/sudoers
 ```
 
 ### Auto mount mmcblk0p3
@@ -164,13 +164,13 @@ chown root:root ~/alpine-install/lb/etc/sudoers
 Add as well your 3rd partition to fstab:
 
 ```bash
-echo "/dev/mmcblk0p3 /media/mmcblk0p3 ext4 rw,relatime 0 0" >> ~/alpine-install/lb/etc/fstab
+echo "/dev/mmcblk0p3 /media/mmcblk0p3 ext4 rw,relatime 0 0" >> ~/alpine-install/armv6/lb/etc/fstab
 ```
 
 ### Bonus: change the welcome message
 
 ```bash
-echo "Welcome home!" > ~/alpine-install/etc/motd
+echo "Welcome home\!" > ~/alpine-install/armv6/lb/etc/motd
 ```
 
 ### Copy back the lbu to your sdcard
@@ -178,9 +178,9 @@ echo "Welcome home!" > ~/alpine-install/etc/motd
 Recompress everything (be careful to change the host to your selected hostname):
 
 ```bash
-sudo tar -czvf ~/alpine-install/host.apkovl.tar.gz -C ~/alpine-install/lb .
-rm -rf ~/alpine-install/lb
-sudo cp ~/alpine-install/host.apkovl.tar.gz /sda2mountpoint/
+sudo tar -czvf ~/alpine-install/armv6/host.apkovl.tar.gz -C ~/alpine-install/armv6/lb .
+rm -rf ~/alpine-install/armv6/lb
+sudo cp ~/alpine-install/armv6/host.apkovl.tar.gz /sda2mountpoint/
 umount /sda2mountpoint
 ```
 
@@ -199,6 +199,12 @@ Tips if you have errors, on you rpi, just uncomment the two following lines in /
 ```code
     SyslogFacility AUTH
     LogLevel INFO
+```
+
+Making sure maintenance stays the owner of its home:
+
+```bash
+sudo chown -r maintenance:maintenance /home/maintenance
 ```
 
 ## Securing SSH connection
@@ -251,5 +257,5 @@ Solution: use the overlayfs, it will allow you to deport some folders in the las
 For example, if you want to use /var/test, you can overlay /var/test:
 
 ```bash
-echo "overlay /var/test overlay lowerdir=/var/test,upperdir=/media/mmcblk0p3/var/test 0 0" >> ~/alpine-install/lb/etc/fstab
+echo "overlay /var/test overlay lowerdir=/var/test,upperdir=/media/mmcblk0p3/var/test 0 0" >> ~/alpine-install/armv6/lb/etc/fstab
 ```
