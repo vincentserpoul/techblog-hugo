@@ -37,6 +37,15 @@ ssh -i ~/.ssh/YOURPUBKEY maintenance@home-gateway
 sudo chown root:dialout /dev/ttyACM0
 ```
 
+If you want this change to be permanent, you will need to use the eudev package:
+
+```bash
+sudo apk add eudev
+printf 'SUBSYSTEM=="tty", KERNEL=="ttyUSB0", ATTRS{product}=="XStick", GROUP="dialout"\n\nSUBSYSTEM=="tty", KERNEL=="ttyACM0", ATTRS{product}=="DWC OTG Controller", GROUP="dialout"\n' | sudo tee -a /etc/udev/rules.d/90-tty.rules > /dev/null
+sudo rc-update add udev sysinit
+sudo lbu ci
+```
+
 Launching the container with the needed devices:
 
 ```bash
