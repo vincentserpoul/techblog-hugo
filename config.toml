@@ -5,3 +5,5 @@ title = "VS tech corner"
 theme = "detox"
 googleAnalytics = "UA-81802018-1"
 disqusShortname = "vincentserpoul-tech-corner"
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
