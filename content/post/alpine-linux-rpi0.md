@@ -259,3 +259,19 @@ For example, if you want to use /var/test, you can overlay /var/test:
 ```bash
 echo "overlay /var/test overlay lowerdir=/var/test,upperdir=/media/mmcblk0p3/var/test 0 0" >> ~/alpine-install/armv6/lb/etc/fstab
 ```
+
+## Update 2019/06/03
+
+We can use parted to automate the disk formatting:
+
+```shell
+sudo parted --script -a optimal /dev/sda \
+    mklabel gpt \
+    mkpart primary fat32 0% 256MiB \
+    mkpart primary ext4 256MiB 2GiB \
+    mkpart primary ext4 2GiB 100% \
+    set 1 boot on &&
+sudo mkfs.vfat -F 32 /dev/sda1 &&
+sudo mkfs.ext4 /dev/sda2 &&
+sudo mkfs.ext4 /dev/sda3
+```
