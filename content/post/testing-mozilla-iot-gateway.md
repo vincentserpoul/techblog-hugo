@@ -60,10 +60,20 @@ A little explanation:
 
 The booting time is **very** long, so be patient.
 
+## Without the udev rule
+
+```bash
+docker run -d --restart always --name mozilla-iot-gateway --net host -v /media/mmcblk0p3/mozilla-iot-gateway:/home/node/.mozilla-iot --device=/dev/ttyUSB0 --device=/dev/ttyACM0  moz
+illaiot/gateway:arm
+```
+
+You have to add the device to docker run.
+
 ## Reaching you gateway
 
 You should be able to use an external URL to reach your RPi, XXX.mozilla-iot.org.
 It is not a simple website, it's also a PWA, allowing you to set it up as an app on your mobile phone!
+You can also reach it from within your network with https://home-gateway:4443/things
 
 ## Configuration
 
