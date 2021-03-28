@@ -1,13 +1,11 @@
 +++
 date = "2021-03-28T18:39:35+08:00"
-title = "Go embed in go1.16"
+title = "golang 1.16 new feature: embed"
 description = "using go embed in go 1.16"
 tags = ["golang", "embed", "static", "simple"]
 topics = ["golang", "embed", "static", "simple"]
 slug = "go-embed-1.16"
 +++
-
-## Golang 1.16 new feature: embed
 
 ### What is it about
 
