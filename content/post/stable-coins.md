@@ -9,12 +9,17 @@ slug = "stable-coins"
 
 In today's crypto world, a few tokens are said stable. that means stable regarding a specific asset, like fiat or even BTC.
 Here is a compiled list of a few, with information on the way they are backed and audited.
+sources: https://en.wikipedia.org/wiki/Stablecoin
+
+## Types of stable coins
 
 💵 fiat based
 
 🪙 crypto curr based
 
-👑 Seigniorage Style Stablecoins
+👑 Seigniorage Style Stablecoins (also called algorithmic or synthetic)
+
+## List
 
 | name                                                                 | symbol | backed how?                                | audit                                                                                                                                                         |
 | -------------------------------------------------------------------- | ------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,5 +37,15 @@ Here is a compiled list of a few, with information on the way they are backed an
 | [Frax](https://frax.finance/)                                        | FRAX   | 🪙 👑                                       | smart contracts                                                                                                                                               |
 | [sUSD](https://synthetix.community/blog/2020/04/13/the-rise-of-susd) | sUSD   | 🪙 👑                                       | smart contracts                                                                                                                                               |
 | [mStable](https://mstable.org/)                                      | mUSD   | 🪙 👑                                       | smart contracts                                                                                                                                               |
+| [Fei](https://fei.money)                                             | FEI    | 🪙 👑                                       | smart contracts                                                                                                                                               |
 
-source: https://en.wikipedia.org/wiki/Stablecoin
+## Subjective evaluation of stablity
+
+The criterias we will use are the following:
+
+- Market cap
+- Trade volumes
+- Time elpased since creation
+- Historic standard deviation
+- Type of backing
+- Audit and security
