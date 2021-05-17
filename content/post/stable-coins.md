@@ -11,7 +11,7 @@ In today's crypto world, a few tokens are said stable. that means stable regardi
 Here is a compiled list of a few, with information on the way they are backed and audited.
 sources: https://en.wikipedia.org/wiki/Stablecoin
 
-## Types of stable coins
+### Types of stable coins
 
 💵 fiat based
 
@@ -19,7 +19,7 @@ sources: https://en.wikipedia.org/wiki/Stablecoin
 
 👑 Seigniorage Style Stablecoins (also called algorithmic or synthetic)
 
-## List
+### List
 
 | name                                                                 | symbol | backed how?                                | audit                                                                                                                                                         |
 | -------------------------------------------------------------------- | ------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,7 +39,7 @@ sources: https://en.wikipedia.org/wiki/Stablecoin
 | [mStable](https://mstable.org/)                                      | mUSD   | 🪙 👑                                       | smart contracts                                                                                                                                               |
 | [Fei](https://fei.money)                                             | FEI    | 🪙 👑                                       | smart contracts                                                                                                                                               |
 
-## Stability and risk
+### Stability and risk
 
 The criterias to evaluate the different platforms and protocols would be among the following:
 
@@ -50,7 +50,7 @@ The criterias to evaluate the different platforms and protocols would be among t
 - Type of backing
 - Audit and security
 
-## Investment protocols and platforms leveraging stable coins
+### Investment protocols and platforms leveraging stable coins
 
 The serenity fund provides a [weekly update](https://serenityfund.medium.com/weekly-market-return-on-stablecoin-based-strategies-3-may-2021-c448fecfb780) for market returns on stable coin based strategies.
 
