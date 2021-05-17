@@ -97,8 +97,6 @@ No wrapping when there is no additional context.
 Context is not stack trace.
 Externally available errors should be handling all errors, unwrap them and repackage them again.
 
-[testable in the playground](https://play.golang.org/p/gzCFQLfaGdL)
-
 ```golang
 type marshalError string
 
@@ -114,8 +112,6 @@ func testErr() error {
 ```
 
 #### For more complex errors
-
-With context built in, [on the playground](https://play.golang.org/p/XE7L2KWf3Au)
 
 ```golang
 type badValueError struct {
