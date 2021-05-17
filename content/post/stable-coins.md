@@ -39,9 +39,9 @@ sources: https://en.wikipedia.org/wiki/Stablecoin
 | [mStable](https://mstable.org/)                                      | mUSD   | 🪙 👑                                       | smart contracts                                                                                                                                               |
 | [Fei](https://fei.money)                                             | FEI    | 🪙 👑                                       | smart contracts                                                                                                                                               |
 
-## Subjective evaluation of stablity
+## Stability and risk
 
-The criterias we will use are the following:
+The criterias to evaluate the different platforms and protocols would be among the following:
 
 - Market cap
 - Trade volumes
@@ -49,3 +49,11 @@ The criterias we will use are the following:
 - Historic standard deviation
 - Type of backing
 - Audit and security
+
+## Investment protocols and platforms leveraging stable coins
+
+The serenity fund provides a [weekly update](https://serenityfund.medium.com/weekly-market-return-on-stablecoin-based-strategies-3-may-2021-c448fecfb780) for market returns on stable coin based strategies.
+
+To hedge the risk, we can check the cost of a nexus mutual coverage for your deposit.
+
+As example for the May 3rd weekly report, only considering the mainstream (curve and yearn), it seems BUSD v2 provides a solid return of 34% APY and is insurable by nexus mutual at 4%.
