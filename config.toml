@@ -2,8 +2,56 @@ baseurl = "https://vincentserpoul.github.io/"
 publishdir = "../vincentserpoul.github.io"
 languageCode = "en-us"
 title = "VS tech corner"
-theme = "detox"
+theme = "PaperMod"
 googleAnalytics = "UA-81802018-1"
 disqusShortname = "vincentserpoul-tech-corner"
 pygmentsCodefences = true
 pygmentsStyle = "pygments"
+
+[params]
+env = "production"
+title = "Vincent Serpoul"
+description = "Vincent Serpoul"
+keywords = [ "blog", "technology" ]
+author = "Me"
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = false
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = true
+tocopen = false
+
+  [params.label]
+  text = "Home"
+
+  [params.homeInfoParams]
+  Title = "Hi there 👋"
+  Content = "Welcome to my blog"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/vincentserpoul"
+
+[params.analytics.google]
+SiteVerificationTag = "UA-81802018-1"
+
+[[menu.main]]
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+weight = 20
+
+[[menu.main]]
+identifier = "vincentserpoul"
+name = "vincentserpoul.github.io"
+url = "https://vincentserpoul.github.io/"
+weight = 30
