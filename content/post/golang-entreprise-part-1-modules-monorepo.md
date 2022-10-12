@@ -18,15 +18,19 @@ Take a look at [this example](https://github.com/vincentserpoul/testwrksp)
 
 ## Benefits
 
-* Have all the important reusable company modules at the same place. Bringin a better collaboration, and easier discovery.
-* Mutualize the CI (which is pretty easy)
-* Have good folder structure, allowing the grouping of modules in topics
+- Have all the important reusable company modules at the same place. Bringin a better collaboration, and easier discovery.
+- Mutualize the CI (which is pretty easy)
+- Have good folder structure, allowing the grouping of modules in topics
 
 ## Drawback
 
+(
 The only drawback I could see until now it the coverage during the CI.
 It took quite some time to configure [coveralls.io](https://coveralls.io) to display one number which was the aggregate of all modules.
 Which also has the consequence of having to run all coverages, each time there is one change in one of the repo (it can probably be mitigated with some cache management).
+)
+
+**UPDATE 20222-10-12**: you can actually run go tests, hence go coverage over multiple folders, so the coverage drawback does not even exist anymore.
 
 ## Versioning
 
